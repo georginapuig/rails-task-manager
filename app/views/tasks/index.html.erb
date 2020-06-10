@@ -1,0 +1,23 @@
+<div class="container pt-3">
+  <h1>My tasks</h1>
+
+  <form action="/action_page.php">
+    <div class="pt-2 pb-2">
+      <% @tasks.each do |task| %>
+        <input type="checkbox" name="completed">
+        <label for="completed"><%= link_to task.title, task_path(task.id) %></label>
+        
+        <%= link_to task_path(task.id), 
+          method: :delete, 
+          data: { confirm: "Delete #{task.title}?" } do %>
+          <i class="fa fa-trash-o text-danger" aria-hidden="true"></i>
+        <% end %>
+        <br>
+      <% end %>
+    </div>
+  </form>
+
+  <%= link_to new_task_path do %>
+    <i class="fa fa-plus"></i> Add a new task
+  <% end %>
+</div>
