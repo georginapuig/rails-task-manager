@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   # rails new thespoon-with-activerecord --skip-active-storage --skip-action-mailbox
   # rails generate model Tasks title:string details:text completed:boolean 
-  #  rails db:migrate
+  # rails db:migrate
+  # rails generate controller tasks  
 
   # READ ALL TASKS
   get "tasks", to: "tasks#index"
